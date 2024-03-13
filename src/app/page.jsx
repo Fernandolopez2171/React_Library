@@ -1,27 +1,38 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import "../assets/Styles/Home.css";
-import Login from "../components/Login.";
-
+import "../assets/Styles/Modal.css";
+import Modal from "../components/Modal";
+import Login from "../components/Login";
+import Button from "../components/Button";
 export default function Home() {
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
   const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleLoginData = (data) => {
-    setLoginData(data);
-    console.log(data);
-    if (data.username === "admin" && data.password === "admin") {
+  const handleLoginData = () => {
+    console.log(username, password);
+    if (username === "admin" && password === "admin") {
       router.push("/Dashboard");
     }
   };
 
   return (
-    <div>
-      <h1>Home</h1>
-      <div className="fullScreenCenter">
+    <div className="fullScreenCenter">
+      <div className="card shadow">
+        <h1>Logo</h1>
         <div>
-          <Login onLogin={handleLoginData} />
+          <Modal
+            title="Login"
+            body={<Login setUsername={setUsername} setPassword={setPassword} />}
+            buttons={
+              <Button
+                key="loginButton"
+                text="Login"
+                onClick={handleLoginData}
+              />
+            }
+          />
         </div>
       </div>
     </div>
