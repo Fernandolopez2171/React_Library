@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import "../assets/Styles/Modal.css";
+import "../assets/Styles/Pages.css";
 import Modal from "../components/Modal";
 import Login from "../components/Login";
 import Button from "../components/Button";
