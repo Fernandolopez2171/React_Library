@@ -13,7 +13,7 @@ export default function Home() {
   const handleLoginData = () => {
     console.log(username, password);
     if (username === "admin" && password === "admin") {
-      router.push("/Dashboard");
+      router.push("/NewBook");
     }
   };
 

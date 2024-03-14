@@ -1,9 +1,8 @@
-import React from "react";
 import "../assets/Styles/Modal.css";
 
-const Modal = ({ title, body, buttons }) => {
+const Modal = ({ title, body, buttons, className }) => {
   return (
-    <div className="modal-container">
+    <div className={`modal-container ${className}`}>
       <h2 style={{ textAlign: "center" }}>{title}</h2>
       <div>{body}</div>
       {buttons}
